@@ -21,3 +21,15 @@ def fibs_rec(n)
   end
   n
 end
+
+# merge sort
+def merge_sort(arr = [8, 3, 5, 6, 7, 4, 1, 2])
+  if arr.length == 1
+    arr
+  elsif arr.length > 1
+    left = merge_sort(arr[0, arr.length / 2])
+    right = merge_sort(arr[arr.length / 2, arr.length])
+    arr = [left, right].flatten.sort { |a, b| a <=> b }
+  end
+  arr
+end
